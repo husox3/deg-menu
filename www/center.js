@@ -127,7 +127,7 @@ window.runCenter = function (C, S, show, playLogo) {
   });
   if(ciftler.length<2) seq.push(['t']);
   seq.push(['d']);
-  // her sahne geçişinde 2 sn logo
+  // her sahne geçişinde logo (süre: SURE.logo)
   var seq2=[]; seq.forEach(function(x){ seq2.push(x); seq2.push(['l']); }); seq=seq2;
 
   var p=0, hiT, hi=-1;
