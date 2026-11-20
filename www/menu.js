@@ -39,6 +39,11 @@ window.MENU = {
     ]
   },
   center: {
+    // Afişler: sadece LG'de (orta ekran) akışın sonunda, her biri kendi süresi kadar gösterilir.
+    // Yeni afiş: resmi www/afis/ içine koy, buraya bir satır ekle.
+    afisler: [
+      { dosya: "matcha.jpg", sure: 10 }
+    ],
     // kombolarda fotoğraf: gerçek kombo fotoğrafları gelene kadar kapalı (false)
     komboFoto: false,
     // Kombolar: [tatlı, içecek]. Fiyat = ikisinin toplamı, en yakın 50 TL'ye AŞAĞI yuvarlanır (385→350, 420→400).

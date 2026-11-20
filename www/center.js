@@ -127,6 +127,13 @@ window.runCenter = function (C, S, show, playLogo) {
   });
   if(ciftler.length<2) seq.push(['t']);
   seq.push(['d']);
+  // afişler (tam ekran resim)
+  var aS=null;
+  if(C.afisler && C.afisler.length){
+    aS=document.createElement('div'); aS.className='scene full afisScene'; aS.id='afisScene';
+    dS.parentNode.insertBefore(aS,dS.nextSibling);
+    C.afisler.forEach(function(a,ai){ seq.push(['a',ai]); });
+  }
   // her sahne geçişinde logo (süre: SURE.logo)
   var seq2=[]; seq.forEach(function(x){ seq2.push(x); seq2.push(['l']); }); seq=seq2;
 
@@ -145,6 +152,7 @@ window.runCenter = function (C, S, show, playLogo) {
       setTimeout(function(){ if(hi>=0)cards[hi].classList.remove('hi'); hi=-1; step(); },S.tatli*1000);
     }
     else if(s[0]==='d'){ show(dS); setTimeout(step,S.diger*1000); }
+    else if(s[0]==='a'){ var a=C.afisler[s[1]]; aS.innerHTML='<img src="afis/'+a.dosya+'">'; show(aS); setTimeout(step,(a.sure||10)*1000); }
     else { playLogo(step); }
   }
   step();

@@ -1,3 +1,4 @@
+afis/matcha.jpg
 art.js
 center.js
 figure.png
